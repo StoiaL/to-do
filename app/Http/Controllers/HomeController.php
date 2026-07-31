@@ -9,30 +9,21 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $todos = [
+        $todos = Todo::all();
 
-            [
-                'title' => 'Redesign the layout',
-                'description' => 'Scrollable todo list in a card. Fixed Add button under the list. Mobile flexible layout?'
-            ],
+        //save user
 
-            [
-                'title' => 'Interactive todos',
-                'description' => 'Edit when hovering over the extended details list, possibly delete by deleting all details. CTRL + Z returns deleted todos'
-            ],
 
-            [
-                'title' => 'Editable details panel',
-                'description' => 'Seamless sliding edit tab with live edits'
-            ],
-
-            [
-                'title' => 'Connect to Laravel',
-                'description' => 'Save and delete todos to MySQL database'
-            ]
-
-        ];
-
-        return view('home', compact('todos'));
+        // folositor la DEBUGGING dd($todos); //public function create
+        return view('home', [
+            'todos' => $todos,
+        ]);
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
+
+
 }

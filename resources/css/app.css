@@ -28,22 +28,39 @@ h1 {
 
 }
 
-.content {
+.content{
+    display:flex;
+    gap:20px;
+}
 
-    display: flex;
+.actions{
+    width:60px;
 
-    gap: 50px;
-
-    align-items: flex-start;
-
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
 }
 
 .todo-list {
+    width: 250px;
+    max-height: 520px;
 
-    width: 350px;
+    overflow-y: auto;
 
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    flex-shrink: 0;
 }
 
+.todo-list{
+    scrollbar-width:none;
+}
+
+.todo-list::-webkit-scrollbar{
+    display:none;
+}
 .todo {
 
     background: white;
@@ -64,8 +81,6 @@ h1 {
 
 .todo:hover {
 
-    transform: translateX(10px);
-
     background: #eef6ff;
 
 }
@@ -76,6 +91,22 @@ h1 {
 
     color: #5f9ef2;
 
+    text-decoration: none;
+
+}
+
+.trash{
+    display:none;
+
+    margin-right:10px;
+
+    color:#F25F5F;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:transform .2s;
 }
 
 .description {
@@ -119,5 +150,33 @@ h1 {
         width: 100%;
 
     }
+
+}
+
+#delete-button{
+
+    display:none;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#F25F5F;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+#delete-button:hover{
+
+    transform:scale(1.15) rotate(-15deg);
 
 }
