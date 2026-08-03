@@ -7,6 +7,43 @@ const box = document.getElementById('description-box');
 const deleteButton = document.getElementById('delete-button');
 const deleteForm = document.getElementById('delete-form');
 
+
+const todoList = document.querySelector('.todo-list');
+const moreTodos = document.getElementById('more-todos');
+
+
+function updateMoreTodos() {
+
+    const todos = document.querySelectorAll('.todo:not(.add-button)');
+
+    let hiddenTodos = 0;
+
+    todos.forEach(todo => {
+
+        const listTop = todoList.getBoundingClientRect().top;
+        const listBottom = todoList.getBoundingClientRect().bottom;
+
+        const todoTop = todo.getBoundingClientRect().top;
+        const todoBottom = todo.getBoundingClientRect().bottom;
+
+        // Todo is completely below the visible list
+        if (todoTop >= listBottom) {
+            hiddenTodos++;
+        }
+
+    });
+
+    if (hiddenTodos > 0) {
+        moreTodos.textContent = `+${hiddenTodos} more`;
+    } else {
+        moreTodos.textContent = '';
+    }
+}
+
+updateMoreTodos();
+
+todoList.addEventListener('scroll', updateMoreTodos);
+
 let selectedTodo = null;
 
 // Hide everything when the page loads

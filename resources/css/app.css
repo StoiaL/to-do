@@ -43,7 +43,7 @@ h1 {
 
 .todo-list {
     width: 250px;
-    max-height: 520px;
+    max-height: 510px;
 
     overflow-y: auto;
 
@@ -83,6 +83,13 @@ h1 {
 
     background: #eef6ff;
 
+}
+
+.more-todos {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #000100;
 }
 
 .add-button {

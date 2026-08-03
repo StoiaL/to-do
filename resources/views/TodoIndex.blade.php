@@ -22,24 +22,30 @@
             </button>
         </div>
 
-        <div class="todo-list">
+        <div class="todo-section">
 
-            @foreach($todos as $todo)
+            <div class="todo-list">
 
-                <div
-                    class="todo"
-                    data-id="{{ $todo->id }}"
-                    data-title="{{ $todo->title }}"
-                    data-description="{{ $todo->description }}"
-                >
-                    {{ $todo->title }}
-                </div>
+                @foreach($todos as $todo)
 
-            @endforeach
+                    <div
+                        class="todo"
+                        data-id="{{ $todo->id }}"
+                        data-title="{{ $todo->title }}"
+                        data-description="{{ $todo->description }}"
+                    >
+                        {{ $todo->title }}
+                    </div>
 
-            <a href="{{ route('todos.create') }}" class="todo add-button">
-                + Add new To-Do
-            </a>
+                @endforeach
+
+                <a href="{{ route('todos.create') }}" class="todo add-button">
+                    + Add new To-Do
+                </a>
+
+            </div>
+
+            <div class="more-todos" id="more-todos"></div>
 
         </div>
 
