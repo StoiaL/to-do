@@ -98,7 +98,7 @@ deleteButton.addEventListener('click', (event) => {
         return;
     }
 
-    deleteForm.action = '/todos/' + selectedTodo;
+    deleteForm.action = '/todos/' + selectedTodo.dataset.id;
 
     deleteForm.submit();
 
