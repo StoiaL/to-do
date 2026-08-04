@@ -138,6 +138,26 @@ h1 {
 
 }
 
+.todo-description-input {
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    padding: 0;
+    margin: 0;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+
+    resize: none;
+    overflow-y: hidden;
+}
+
 @media (max-width: 768px) {
 
     .content {

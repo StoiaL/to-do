@@ -58,11 +58,11 @@ todos.forEach(todo => {
         event.stopPropagation();
 
         // Save the selected todo's id
-        selectedTodo = todo.dataset.id;
+        selectedTodo = todo;
 
         // Update the description box
         title.textContent = todo.dataset.title;
-        description.textContent = todo.dataset.description;
+        description.value = todo.dataset.description;
 
         // Show description and delete button
         box.style.display = 'block';
@@ -74,7 +74,7 @@ todos.forEach(todo => {
 
 // Clicking outside hides everything
 document.addEventListener('click', () => {
-
+    saveDescription();
     selectedTodo = null;
 
     box.style.display = 'none';
@@ -105,3 +105,66 @@ deleteButton.addEventListener('click', (event) => {
 });
 
 
+//functie de save descriere
+async function saveDescription() {
+
+    if (!selectedTodo) {
+        return;
+    }
+
+    const id = selectedTodo.dataset.id;
+
+    try {
+
+        const response = await fetch('/todos/' + id, {
+
+            method: 'PUT',
+
+            headers: {
+                'Content-Type': 'application/json',
+
+                'X-CSRF-TOKEN':
+                document.querySelector('meta[name="csrf-token"]').content,
+
+                'Accept': 'application/json'
+            },
+
+            body: JSON.stringify({
+                description: description.value
+            })
+
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to save Todo');
+        }
+
+        selectedTodo.dataset.description = description.value;
+
+        console.log('Description saved!');
+
+    } catch (error) {
+
+        console.error('Error saving description:', error);
+
+    }
+}
+
+description.addEventListener('blur', () => {    //save cand apasa inafara
+
+    saveDescription();
+
+});
+
+
+description.addEventListener('keydown', (event) => {    //save si cand apasa enter
+
+    if (event.key === 'Enter' && !event.shiftKey) {
+
+        event.preventDefault();
+
+        description.blur();
+
+    }
+
+});
