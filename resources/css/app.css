@@ -242,3 +242,68 @@ h1 {
 .home-button:hover {
     transform: scale(1.05);
 }
+
+
+.sqli-container {
+    width: 800px;
+    max-width: 90%;
+
+    margin: 50px auto;
+}
+
+.sqli-container textarea {
+    width: 100%;
+    min-height: 150px;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    font-family: monospace;
+    font-size: 16px;
+
+    border-radius: 10px;
+}
+
+.sqli-container button {
+    margin-top: 10px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.sqli-results {
+    margin-top: 20px;
+}
+
+.sqli-results pre {
+    padding: 15px;
+
+    background: #eee;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+.sqli-message {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+}
+
+.sqli-error {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+}
