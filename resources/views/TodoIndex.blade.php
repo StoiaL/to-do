@@ -19,19 +19,20 @@
 
     <div class="content">
 
-        <div class="actions">
-            <button id="delete-button" style="display:none;">
-                🗑️
-            </button>
-        </div>
-
         <div class="todo-section">
 
             <div class="todo-list">
 
                 @foreach($todos as $todo)
 
-                    <table>
+                    <table class="todo-table">
+
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>description</th>
+                            <th>actions</th>
+                        </tr>
 
                         <tr
                             class="todo"
@@ -39,8 +40,25 @@
                             data-title="{{ $todo->title }}"
                             data-description="{{ $todo->description }}"
                         >
-                            <td>
-                                {{ $todo->title }}
+                            <td>{{ $todo->id }}</td>
+                            <td>{{ $todo->title }}</td>
+                            <td>{{ $todo->description }}</td>
+                            <td class="actions-cell">
+                                <button
+                                    type="button"
+                                    class="edit-todo"
+                                    data-id="{{ $todo->id }}"
+                                >
+                                    Edit
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="delete-todo"
+                                    data-id="{{ $todo->id }}"
+                                >
+                                    Delete
+                                </button>
                             </td>
                         </tr>
 
