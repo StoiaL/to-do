@@ -51,14 +51,14 @@ class SQLiController extends Controller
         try {
             $results = DB::select($sql);
 
-            return view('sqli', [
+            return view('SQLi', [
                 'results' => $results,
                 'sql' => $sql,
             ]);
 
         } catch (\Exception $e) {
 
-            return view('sqli', [
+            return view('SQLi', [
                 'error' => $e->getMessage(),
                 'sql' => $sql,
             ]);

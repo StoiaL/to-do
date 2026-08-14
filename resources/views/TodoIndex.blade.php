@@ -31,14 +31,20 @@
 
                 @foreach($todos as $todo)
 
-                    <div
-                        class="todo"
-                        data-id="{{ $todo->id }}"
-                        data-title="{{ $todo->title }}"
-                        data-description="{{ $todo->description }}"
-                    >
-                        {{ $todo->title }}
-                    </div>
+                    <table>
+
+                        <tr
+                            class="todo"
+                            data-id="{{ $todo->id }}"
+                            data-title="{{ $todo->title }}"
+                            data-description="{{ $todo->description }}"
+                        >
+                            <td>
+                                {{ $todo->title }}
+                            </td>
+                        </tr>
+
+                    </table>
 
                 @endforeach
 
