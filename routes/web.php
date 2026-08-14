@@ -19,6 +19,8 @@ Route::delete('/todos/{todo}', [TodoController::class, 'destroy'])->name('todos.
 
 Route::put('/todos/{todo}', [TodoController::class, 'update'])->name('todos.update'); //put = update
 
+Route::get('/todos/{todo}', [TodoController::class, 'edit'])->name('todos.edit');
+
 Route::get('/todos/SQLi', [SQLiController::class, 'index'])->name('sqli.index');
 
 Route::post('/todos/SQLi', [SQLiController::class, 'execute'])->name('sqli.execute');

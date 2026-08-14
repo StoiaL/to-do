@@ -51,4 +51,12 @@ class TodoController extends Controller
             'success' => true,
         ]);
     }
+
+    public function edit(Todo $todo)
+    {
+        return view('edit', [
+            'todo' => $todo
+        ]);
+    }
+
 }
