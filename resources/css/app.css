@@ -42,7 +42,7 @@ h1 {
 }
 
 .todo-list {
-    width: 250px;
+    width: 600px;
     max-height: 510px;
 
     overflow-y: auto;
@@ -84,6 +84,14 @@ h1 {
     background: #eef6ff;
 
 }
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+
 
 .more-todos {
     text-align: center;
