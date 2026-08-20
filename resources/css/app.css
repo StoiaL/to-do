@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
 
     margin: 0;
@@ -14,7 +16,7 @@ body {
 
     max-width: 1000px;
 
-    width: 90%;
+    width: 95%;
 
     margin: 80px auto;
 
@@ -42,8 +44,8 @@ h1 {
 }
 
 .todo-list {
-    width: 600px;
-    max-height: 510px;
+    width: 800px;
+    max-height: 610px;
 
     overflow-y: auto;
 
@@ -314,4 +316,160 @@ h1 {
     padding: 15px;
 
     border-radius: 10px;
+}
+
+
+.todo-form-container {
+    width: 600px;
+    max-width: 90%;
+
+    margin: 80px auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+.todo-form-container h1 {
+    margin-top: 0;
+    margin-bottom: 35px;
+
+    text-align: center;
+}
+
+.todo-form-group {
+    margin-bottom: 25px;
+}
+
+.todo-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    font-size: 15px;
+}
+
+.todo-form-group input,
+.todo-form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dbe3ee;
+
+    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    color: #1f2937;
+
+    background: #f8fafc;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.todo-form-group input {
+
+    height: 45px;
+}
+
+.todo-form-group textarea {
+
+    min-height: 220px;
+
+    resize: vertical;
+}
+
+.todo-form-group input:focus,
+.todo-form-group textarea:focus {
+
+    border-color: #5f9ef2;
+
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(95,158,242,.12);
+}
+
+.todo-form-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.todo-cancel-button,
+.todo-save-button {
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: .2s;
+
+    border: none;
+}
+
+.todo-cancel-button {
+
+    background: #eef2f7;
+
+    color: #4b5563;
+}
+
+.todo-cancel-button:hover {
+
+    background: #e2e8f0;
+}
+
+.todo-save-button {
+
+    background: #5f9ef2;
+
+    color: white;
+}
+
+.todo-save-button:hover {
+
+    background: #4d8ee5;
+
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+
+    .todo-form-container {
+
+        margin: 40px auto;
+
+        padding: 25px;
+
+    }
+
 }

@@ -44,20 +44,38 @@
                             <td>{{ $todo->title }}</td>
                             <td>{{ $todo->description }}</td>
                             <td class="actions-cell">
-                                <button
-                                    type="button"
-                                    class="edit-todo"
-                                    data-id="{{ $todo->id }}"
+
+                            <td class="actions-cell flex items-center justify-center gap-2">
+
+                                <a
+                                    href="{{ route('todos.edit', $todo) }}"
+                                class =""
                                 >
                                     Edit
-                                </button>
+                                </a>
+
+                                <form
+                                    action="{{ route('todos.destroy', $todo) }}"
+                                    method="POST"
+                                    style="display: inline;"
+                                >
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button
+                                        type="submit"
+                                        class="delete-button"
+                                    >
+                                        Delete
+                                    </button>
+                                </form>
 
                                 <button
                                     type="button"
-                                    class="delete-todo"
+                                    class=""
                                     data-id="{{ $todo->id }}"
                                 >
-                                    Delete
+                                    Comment
                                 </button>
                             </td>
                         </tr>

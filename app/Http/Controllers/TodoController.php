@@ -41,15 +41,15 @@ class TodoController extends Controller
         return view('create');
     }
 
-    public function update(Request $request, Todo $todo)
+    public function update(CreateToDoRequest $request, Todo $todo)
     {
+        $validated = $request->validated();
         $todo->update([
-            'description' => $request->description,
+            'title' => $validated['title'],
+            'description' => $validated['description'],
         ]);
 
-        return response()->json([
-            'success' => true,
-        ]);
+        return redirect('/todos');
     }
 
     public function edit(Todo $todo)
@@ -57,6 +57,7 @@ class TodoController extends Controller
         return view('edit', [
             'todo' => $todo
         ]);
+
     }
 
 }
