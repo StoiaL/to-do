@@ -64,7 +64,7 @@
 
                                     <button
                                         type="submit"
-                                        class="delete-button"
+                                        class="delete-button cursor-pointer"
                                     >
                                         Delete
                                     </button>
